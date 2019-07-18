@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import BookList from './views/BookList.vue'
 import Book from './views/Book.vue'
+import Article from './views/Article.vue'
 import Search from './views/Search.vue'
 
 Vue.use(Router)
@@ -26,6 +27,12 @@ export default new Router({
       name: 'book',
       props: true,
       component: Book
+    },
+    {
+      path: '/article/:id',
+      name: 'article',
+      props: true,
+      component: Article
     },
     {
       path: '/search',
