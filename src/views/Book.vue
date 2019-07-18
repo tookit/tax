@@ -1,13 +1,21 @@
 <template>
   <div>
     <van-nav-bar
-      title="税费一本通"
-      left-text="返回"
-      right-text="按钮"
+      style="height:74px;line-height:74px;background:#0b6dd0;color:#fff!important;"
+      right-text="返回"
       left-arrow
       @click-left="onClickLeft"
       @click-right="onClickRight"
-    />
+    >
+      <van-icon slot="left" name="/logo.png" size="50px" />
+      <div slot="title" style="color:#fff">
+        优惠税费政策一本通
+      </div>
+      <div slot="right">
+        <van-icon name="arrow-left" color="#fff" size="18px"/>
+        <span class="van-nav-bar__text" style="color:#fff">返回</span>
+      </div>
+    </van-nav-bar>
     <form action="/">
       <van-search placeholder="全书搜索" @search="onSearch" />
     </form>
@@ -20,10 +28,10 @@
     >
       <van-icon slot="right-icon" name="arrow" style="line-height: inherit;" />
     </van-cell>
-    <van-tabbar v-model="active">
-      <van-tabbar-item icon="home-o">首页</van-tabbar-item>
-      <van-tabbar-item icon="bookmark-o">目录</van-tabbar-item>
-      <van-tabbar-item icon="setting-o">设置</van-tabbar-item>
+    <van-tabbar v-model="active" route>
+      <van-tabbar-item icon="home-o" to="/">首页</van-tabbar-item>
+      <van-tabbar-item icon="bookmark-o" to="/books">目录</van-tabbar-item>
+      <van-tabbar-item icon="arrow-left" to="/settings">返回</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>

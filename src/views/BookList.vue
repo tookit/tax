@@ -1,16 +1,19 @@
 <template>
   <div>
     <van-nav-bar
-      style="height:56px;line-height:56px;background:#0b6dd0;color:#fff"
-      left-text="返回"
+      style="height:74px;line-height:74px;background:#0b6dd0;color:#fff!important;"
       right-text="返回"
       left-arrow
       @click-left="onClickLeft"
       @click-right="onClickRight"
     >
+      <van-icon slot="left" name="/logo.png" size="50px" />
       <div slot="title" style="color:#fff">
-        <!-- <van-image src="/logo.png" width="50px" alt="" /> -->
         优惠税费政策一本通
+      </div>
+      <div slot="right">
+        <van-icon name="arrow-left" color="#fff" size="18px"/>
+        <span class="van-nav-bar__text" style="color:#fff">返回</span>
       </div>
     </van-nav-bar>
     <form action="/">
@@ -26,7 +29,7 @@
     <van-tabbar v-model="active" route>
       <van-tabbar-item icon="home-o" to="/">首页</van-tabbar-item>
       <van-tabbar-item icon="bookmark-o" to="/books">目录</van-tabbar-item>
-      <van-tabbar-item icon="setting-o" to="/settings">设置</van-tabbar-item>
+      <van-tabbar-item icon="arrow-left" to="/settings">返回</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
@@ -91,11 +94,14 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   h2.book__title {
     margin: 0;
     font-weight: 400;
     font-size: 14px;
     color: rgba(69,90,100,.6);
+  }
+  .van-nav-bar__text {
+    color: #fff
   }
 </style>

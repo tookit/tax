@@ -1,5 +1,11 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <div>
+      <van-image src="/logo_1.png" />
+      <van-image src="/title.png" width="370" />      
+    </div>
+
+  </div>
 </template>
 
 <script>
@@ -31,10 +37,8 @@ export default {
 </script>
 
 <style lang="less">
-  h2.book__title {
-    margin: 0;
-    font-weight: 400;
-    font-size: 14px;
-    color: rgba(69,90,100,.6);
+  .home {
+    height:100vh;
+    background: url('/bg.jpg') no-repeat center center;
   }
 </style>
